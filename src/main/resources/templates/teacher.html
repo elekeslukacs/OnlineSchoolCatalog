@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Site made with Mobirise Website Builder v4.11.4, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.11.4, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo4.png" type="image/x-icon">
+  <meta name="description" content="">
+
+  <title>Teacher</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+
+
+</head>
+
+<body>
+  <section class="mbr-section form3 cid-rLEKaK6Ksg" id="form3-c">
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="title col-12 col-lg-8">
+          <h2 class="align-center pb-2 mbr-fonts-style display-2">
+            Choose Group</h2>
+        </div>
+      </div>
+
+      <div class="row py-2 justify-content-center">
+        <div class="col-12 col-lg-6  col-md-8 " data-form-type="formoid">
+
+          <!---Formbuilder Form--->
+          <form action="showStudents" method="POST" class="mbr-form form-with-styler"
+            data-form-title="Mobirise Form">
+
+            <div class="dragArea row">
+              <div class="form-group col" data-for="email">
+                <select name="group" class="col-md-12  form-group">
+                  <option th:each="group: ${groups}" th:value="${group.name}" th:text="${group.name}"></option>
+                </select>
+              </div>
+              
+              <div class="col-auto input-group-btn">
+                <button type="submit" class="btn btn-primary  display-4">SHOW STUDENTS</button>
+              </div>
+            
+            </div>
+          </form>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services5 cid-rLEKEo4ljY" id="services5-e">
+
+    <!--Container-->
+    <div class="container">
+      <div class="row">
+        <!--Titles-->
+        <div class="title pb-5 col-12"></div>
+
+        <!-- PENTRU TEST -->
+        <!--<div class="card px-3 col-12" th:each="student : ${students}">
+          <div class="card-wrapper media-container-row media-container-row">
+            <div class="card-box">
+              <div class="top-line pb-3">
+                <h4 class="card-title mbr-fonts-style display-5" th:text="${student.name}"> </h4>
+
+                <form th:action="${'/done/' + student.id}">
+
+                  <input type="number" name="nota1" min="1" max="10" th:value="${student.arrayOfGrades[0]}">
+                  <input type="number" name="nota2" min="1" max="10" th:value="${student.arrayOfGrades[1]}">
+                  <input type="number" name="nota3" min="1" max="10" th:value="${student.arrayOfGrades[2]}">
+                  <input type="number" name="nota4" min="1" max="10" th:value="${student.arrayOfGrades[3]}">
+                  <input type="number" name="nota5" min="1" max="10" th:value="${student.arrayOfGrades[4]}">
+
+                  <button type="submit">DONE</button>
+                </form>
+
+              </div>
+              <div class="bottom-line">
+
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!--Card-1-->
+        <div class="card px-3 col-12" th:each="student : ${students}">
+          <div class="card-wrapper media-container-row media-container-row">
+            <div class="card-box">
+              <div class="top-line pb-3">
+                <h4 class="card-title mbr-fonts-style display-5" th:text="${student.name}"> </h4>
+
+                <form th:action="${'/done/'+student.id}">
+
+                  <input type="number" name="nota1" min="1" max="10" th:value="${student.arrayOfGrades[0]}">
+                  <input type="number" name="nota2" min="1" max="10" th:value="${student.arrayOfGrades[1]}">
+                  <input type="number" name="nota3" min="1" max="10" th:value="${student.arrayOfGrades[2]}">
+                  <input type="number" name="nota4" min="1" max="10" th:value="${student.arrayOfGrades[3]}">
+                  <input type="number" name="nota5" min="1" max="10" th:value="${student.arrayOfGrades[4]}">
+
+                  <button type="submit">DONE</button>
+                </form>
+
+              </div>
+              <div class="bottom-line">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/formoid/formoid.min.js"></script>
+
+
+</body>
+
+</html>
