@@ -45,9 +45,9 @@ public class TeacherController {
   @RequestMapping(value = "/teacher")
   public ModelAndView showAll(){
     Teacher connected = (Teacher)session.getUser();
-    System.out.println("SZIAAAAAAAAAAAAAAAAAAA");
     ModelAndView modelAndView = new ModelAndView();
     List<Student> students = studentRepo.findAll();
+
     for(Student s : students){
       s.getGradesForSubject(connected.getSubject());
       System.out.println(s.getArrayOfGrades().toString());
@@ -59,9 +59,10 @@ public class TeacherController {
     note.add(9);
     modelAndView.setViewName("teacher");
     modelAndView.addObject("students", students);
+    modelAndView.addObject("teacher", connected);
     //modelAndView.addObject("groups", connected.getGroups());
-    modelAndView.addObject("subject", connected.getSubject().getName());
-
+    //modelAndView.addObject("subject", connected.getSubject().getName());
+    modelAndView.addObject("subject", connected.getSubject());
     modelAndView.addObject("note",  note);
     return modelAndView;
   }
